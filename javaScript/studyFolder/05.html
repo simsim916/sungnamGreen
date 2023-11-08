@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>src속성과 내부 스크립트</title>
+
+    <script src="./javascript/index.js">
+        document.write('script태그에 src속성 적용시 내부 코드는 무시!!');   // src속성은 내부 스크립트를 동시에 포함 불가..
+    </script>
+    <script>console.log('Hello Everyone!! - console');
+        document.write('Hello Everyone!! - browser<br>');</script>
+    <script>
+        document.write('내부 스크립트 오케이!!<br>');
+    </script>
+
+</head>
+
+<body>
+    Hello Everyone!! - body
+</body>
+
+</html>

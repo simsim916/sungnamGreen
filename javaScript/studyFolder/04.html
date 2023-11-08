@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML body 포함 외부 스크립트</title>
+
+
+</head>
+
+<body>
+    Hello Everyone!! - body<br /> <!-- 첫 번째 줄 출력. -->
+
+    <script src="./javascript/index.js"></script> <!-- 외부 스크립트도 작성 순서에 영향을 받음.-->
+    <script>console.log('Hello Everyone!! - console');
+        document.write('Hello Everyone!! - browser');   // 두 번째 줄 출력.</script>
+    <!-- body의 맨 하단에서 js파일을 로딩함으로써 웹 페이지 로딩을 먼저 빠르게 실행시킬 수 있지만, 만약
+    웹 페이지의 구성 요소들이 자바스크립트에 상당히 의존적 구현을 가진다면 js파일이 모두 로드되기 전까지는
+    제대로된 웹 페이지 화면을 볼 수 없거나 실제 실행이 오히려 더 지연될 수 있는 문제점 발생. -->
+</body>
+
+</html>
