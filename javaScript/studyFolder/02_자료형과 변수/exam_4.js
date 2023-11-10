@@ -11,8 +11,7 @@ step3 : '$' + 처음 3자리 + 총 글자 수 + url 의 14번째 문자.        
 'use strict';
 
 let url = 'http://daum.net';
-let starturl = url.indexOf('/') + 2;
-let endurl = url.indexOf('.');
-let changedUrl = url.substring(starturl, endurl);
+let url1 = url.split('//');
+let url2 = url1.split('.');
 
-console.log(` $${url.slice(starturl,starturl+3)}${changedUrl.length}${url.slice(14,15)}`);
+console.log(`$${url2[0].slice(0,2)}`);
