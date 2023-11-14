@@ -1,5 +1,7 @@
 'use strict';
 
-console.log(num);
-
-// var num = 5;
+let ar = {
+    a1 : 5,
+    a2 : 3
+}
+console.log(ar[a1]);

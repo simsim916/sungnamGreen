@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script 요소(async, defer)</title>
+
+    <!--
+         async : HTML문서 분석(parsing)과 서버로부터의 script파일 다운로드(fetching)를 동시에 진행하되,                                     // fetch : 가져 오다.
+         js파일의 다운이 완료되면 파싱을 잠시 멈추고 js파일의 실행을 완료한 후 다시 파싱을 진행.                                            // asynchronous : 비동기적인
+         따라서 문서의 요소가 js파일에 의존적인 경우,  js파일의 실행 시점 예측이 불가능함에따라 문서의
+         요소가 아직 파싱되지도 않은 상태에서  해당 요소에 연관된 js파일 명령이 실행되는 문제점이 발생
+         가능하므로 js파일의 실행이 문서의 파싱과 직접적인 관련이 없는 경우 페이지 로딩 속도면에서 유리.
+         또한  아래와 같이  다중  js파일을 로드하는 경우  문서의 파싱 중에  병렬로 동시에 다운이 되데, 
+         스크립트 정의 순서와 관계 없이 먼저 다운로드가 완료된 js파일부터 실행되는 비동기적 특성을 지녀
+         스크립트 파일 간에 종속 관계가 있는 경우 사용하지 않는 것을 권장.         
+         ( 스크립트의 모든 동작이 독립적인 사용자 스레드와 유사. )
+        -->
+    <script async src="jstest.js1"></script>
+    <script async src="jstest.js2"></script>
+    <script async src="jstest.js3"></script>
+
+    <!--
+        defer : HTML문서 분석(parsing)과 서버로부터의 script파일 다운로드(fetching)는 async와 같이 동시에                                   // defer : 연기하다
+        진행하되,   js파일의 다운이 완료되어도  스크립트의 실행은 지연시키면서  문서의 파싱은 멈추지않고
+        문서의 파싱을 모두 완료한 후에야 js파일을 실행. 따라서 문서의 요소가 js파일에 다소 의존적이더라도
+        페이지 로딩에는 문제가 없고,   문서 파싱이  모두 완료된 후에야  스크립트가 실행되는 특성으로 인해
+        async와 같이 파싱되지도 않은 요소에 대한 연관 스크립트의 실행 문제점은 없어 안정적인 페이지 로딩
+        에는 유리하지만, 전체 문서 파싱이 완료되기전 먼저 파싱된 부분의 스크립트와 연관된 요소는 불완전한
+        페이지 로딩 문제가 발생할 수 있는 한계는 존재.  또한 아래와 같이 다중 js파일을 로드하는 경우 모든
+        js파일에 대한 다운이 완료가 되어도  문서의 파싱이 완료될 때까지  실행이 지연되고,    async와 달리
+        스크립트 정의 순서대로 실행되는 동기적 특성을 지녀 스크립트간에 종속 관계가 있고  모든 스크립트가
+        실행되어야만 정상적 페이지 동작이 가능한 경우 유리. (스크립트의 다운로드는 독립적인 사용자 스레드
+        처럼 작동하지만, 스크립트의 실행은 문서 파싱이 완료되어야 실행되는 join제어 스레드와 유사. )
+    -->
+    <script defer src="jstest.js1"></script>
+    <script defer src="jstest.js2"></script>
+    <script defer src="jstest.js3"></script>
+</head>
+
+<body>
+
+</body>
+
+</html>

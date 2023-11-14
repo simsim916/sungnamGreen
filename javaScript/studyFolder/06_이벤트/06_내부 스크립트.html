@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수를 활용한 인라인과 내부 스크립트 처리</title>
+
+</head>
+
+<body>
+    <h1>함수를 활용한 인라인과 내부 스크립트 처리</h1>
+    <hr>
+
+    <div>
+        <input type="button" value="블랙배경" onclick="changeBlackBg();">
+        <input type="button" value="화이트배경" onclick="changeWhiteBg();">
+    </div>
+    <hr>
+
+    <div>
+        <input type="button" value="블랙배경과 그린 글자" onclick="changeBlackBg_GreenColor();">
+        <input type="button" value="화이트배경과 레드 글자" onclick="changeWhiteBg_RedColor();">
+    </div>
+    <hr>
+
+    <div>
+        <input id="btn" type="button" value="블랙배경" onclick="switchBlack_WhiteBG();">
+    </div>
+    <hr>
+
+    <div>
+        <input type="button" value="버튼 활용 화면변환 테스트 완료" onclick="joinContent_changeColor();">
+    </div>
+
+    <!--
+    함수에 대한 내부 스크립트 처리로 인한 script 태그의 위치 지정 주의.
+    async, defer 속성은 src 속성으로 경로를 지정한 경우에만 적용.
+  -->
+    <script>
+        'use strict'
+
+        let btn = document.querySelector('#btn'),
+            body = document.querySelector('body'),
+            h1 = document.querySelector('h1');
+
+        function changeBlackBg() {
+            body.style.backgroundColor = 'black';
+        }
+
+        function changeWhiteBg() {
+            body.style.backgroundColor = 'white';
+        }
+
+        function changeBlackBg_GreenColor() {
+            body.style.backgroundColor = 'black';
+            body.style.color = 'green'
+        }
+
+        function changeWhiteBg_RedColor() {
+            body.style.backgroundColor = 'white';
+            body.style.color = 'red'
+        }
+
+        function switchBlack_WhiteBG() {
+            if (btn.value === '블랙배경') {
+                body.style.backgroundColor = 'black';
+                btn.value = '화이트배경';
+            } else {
+                body.style.backgroundColor = 'white';
+                btn.value = '블랙배경';
+            }
+        }
+
+        function joinContent_changeColor() {
+            h1.textContent = h1.textContent.concat(' 완료');
+            h1.style.color = 'blue';
+        }
+    </script>
+</body>
+
+</html>
