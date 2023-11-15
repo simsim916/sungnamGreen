@@ -1,7 +1,13 @@
-'use strict';
+function add(n1) { // 매개변수 n1을 받는 add함수
+    if (n1 < 0) { // 매개변수 n1이 0보다 작을때
+  
+      return/*반환값자리*/; // return = 함수 종료 / 값을 반환하는부분 X 
+  
+    }
+    console.log(n1); // 매게변수 n1을 콘솔에 출력
+  }
 
-let ar = {
-    a1 : 5,
-    a2 : 3
-}
-console.log(ar[a1]);
+
+add(-12); // -12가 n1으로 올라갔을때 0보다 작음 -> return(함수종료)
+add(12); // 12가 n1으로 올라갔을때 0보다 작지 않음 -> if문 건너뛰고 -> 콘솔에 n1출력 -> 12
+add(8);
