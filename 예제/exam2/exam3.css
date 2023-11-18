@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: khaki;
+    margin: 0 1%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: khaki;
+    padding-bottom: .625em;
+}
+
+main {
+    background-color: rgb(242, 173, 150);
+    padding: .625em;
+
+    /* js 에서 마진 설정으로 CSS 마진 설정 불필요 */
+    /* margin-top: 11em; */
+}
+
+header .menu,
+header .contents {
+    width: 60%;
+}
+
+/* ============================================================================= */
+
+header .menu {
+    width: 60%;
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .3125em;
+}
+
+header .menu>li {
+    width: 33%;
+}
+
+header .menu a {
+    background-color: darkseagreen;
+    color: aliceblue;
+    letter-spacing: .4em;
+    padding-left: .4em;
+    line-height: 2.5em;
+
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    transition: all .3s ease-in;
+}
+
+/* 
+    메뉴에 selected 클래스 추가/삭제를 통한 색상 지정 추가. 
+*/
+header .menu .selected {
+    background-color: black;
+}
+
+/* ============================================================================= */
+
+header .contents {
+    background-color: rgb(202, 232, 244);
+    width: 60%;
+}
+
+header .contents div {
+    padding: 10px;
+    display: none;
+}
+
+/* 
+    target 선택자 삭제.
+*/

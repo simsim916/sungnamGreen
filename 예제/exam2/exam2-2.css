@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: khaki;
+    margin: 0 1%;
+}
+
+header {
+    /* 
+        < sticky >
+
+    - 기본적으로 offset 이 지정되지 않거나 offset 이 지정된 상태라도 스크롤
+      이벤트 상황이 발생치 않으면 relative 와 같은 static 특성을 가지되,
+      offset 이 지정된 상태면서 스크롤 이벤트 상황이 발생하면 해당 위치 즉,
+      요소의 스크롤이 발생하는 위치를 기준으로 fixed 와 같이 뷰포트에 고정.
+      가장 가까운 부로 요소가 컨테이닝 블럭으로 결정이 되는데, 이 때의
+      컨테이닝 블럭은 뷰포트에 고정되는 범위로 이해 가능.
+      즉, 해당 요소가 컨테이닝 블록의 끝 모서리를 만나는 순간 뷰포트에 고정
+      되는 특성이 해제.
+      단, 해당 컨테이닝 블럭이 되는 부모 요소가 스크롤되는 요소가 아닌 경우
+      에는 고정되는 특성이 적용되지 않음에 주의.
+
+    ============================================================================
+
+        < 문제점 >
+
+    - 버튼을 클릭후 최초 로딩시에는 sticky 가 적용되어도 스크롤이 발생치
+      않으므로 relative 특성으로 인해, header 바로 밑에 main 이 바로 배치.
+      하지만, 타켓이 걸리는 a 태그의 기본 특성으로 인해 하강 스크롤이 발생
+      되고 header 는 뷰포트에 고정되어 있는 상태에서 main 이 스크롤되어
+      문서가 올라가면서 header 밑으로 main 이 가려져 main 의 상단이 잘려
+      보이는 현상 발생.
+    */
+
+    /* fixed 를 sticky 로 수정 */
+    position: sticky;
+    top: 0;
+
+    /* 
+        offset 이 지정되었지만 기본적으로 relative 특성을 유지함으로써 너비
+        지정 불필요.
+    */
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: khaki;
+
+    padding-bottom: .625em;
+}
+
+main {
+    /* maring-top 삭제 */
+    background-color: rgb(242, 173, 150);
+    padding: .625em;
+}
+
+header .menu,
+header .contents {
+    width: 60%;
+}
+
+/* ============================================================================= */
+
+header .menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .3125em;
+}
+
+header .menu>li {
+    width: 33%;
+}
+
+header .menu a {
+    background-color: darkseagreen;
+    color: aliceblue;
+    letter-spacing: .4em;
+    padding-left: .4em;
+    line-height: 2.5em;
+
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ============================================================================= */
+
+header .contents div {
+    background-color: rgb(202, 232, 244);
+    padding: 10px;
+    display: none;
+}
+
+header .contents div:target {
+    display: block;
+}

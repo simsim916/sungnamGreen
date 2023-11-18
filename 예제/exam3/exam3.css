@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+}
+
+.page_container {
+    height: 100vh;
+    position: relative;
+
+    /* 
+        FullPage 슬라이드를 작동을 위해 pageFrame 의 오버플로우로 인한 수직
+        스크롤바 제거를 위한 오버플로우 처리.
+    */
+    overflow: hidden;
+}
+
+.page_container .pageFrame {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    transition: all .7s .05s;
+}
+
+.page_container .pageFrame .page {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+
+    font: 400 italic 25px/33px 'Sedan';
+    text-align: justify;
+    word-break: break-all;
+    letter-spacing: 10px;
+    color: blue;
+    text-transform: capitalize;
+    text-shadow: 8px 4px 2px rgba(0, 0, 0, 0.31);
+
+    /* 
+        확대했을 때 page 내부 요소들(img, p)에 대한 오버플로우 처리.
+    */
+    overflow: hidden;
+}
+
+.page_container .pageFrame .page1 {
+    background-color: blanchedalmond;
+}
+
+.page_container .pageFrame .page2 {
+    color: blueviolet;
+    background-color: rgb(188, 230, 146);
+}
+
+.page_container .pageFrame .page3 {
+    color: beige;
+    background-color: rgb(190, 115, 88);
+}
+
+.page_container .pageFrame .page4 {
+    color: honeydew;
+    background-color: rgb(156, 63, 196);
+}
+
+/* ====================================================================== */
+
+.page_container .btn {
+    width: 50px;
+    height: 50px;
+    background: url(../image/pigma_Btn.png) center/100%;
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.page_container .btn:active {
+    opacity: .5;
+}
+
+.page_container .btn.upBtn {
+    transform: translateY(-100%);
+}
+
+.page_container .btn.downBtn {
+    transform: translateY(100%) rotate(180deg);
+}
+
+/* ====================================================================== */
+
+.page_container .img {
+    width: 300px;
+    height: 370px;
+    float: left;
+    margin-right: 20px;
+}
