@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    margin: 0;
+    background-color: #FAEBD7;
+}
+.logo_page{
+    width: 50%;
+}
+.logo_page img{
+    width: 100%;
+}
+.service_container{
+    width: 50%;
+    position: relative;
+    padding: 20px;
+
+}
+.service_container ul{
+    list-style: none;
+    padding: 0;
+}
+.service_list{
+    margin-bottom: 30px;
+}
+.service_list p{
+    margin: 0;
+    padding: 10px;
+}
+.service_header{
+    line-height: 40px;
+    background-color: #2F4F4F;
+    color: white;
+
+}
+.service_list>.service_body{
+    line-height: 30px;
+    background-color: #E5E2C9;
+    color: black;
+}
+.btn_collapseAll{
+    position: absolute;
+    height: 32px;
+    color: blue;
+    top: 40px; right: 20px;
+}
+.hidden>.service_body{
+    display: none;
+}
