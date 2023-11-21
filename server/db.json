@@ -1,0 +1,28 @@
+{
+  "clientData": [
+    {
+      "name": "최문석",
+      "clinetNumber": 2,
+      "address": "수원시 팔당구",
+      "id": 1
+    },
+    {
+      "name": "최문석",
+      "clinetNumber": 2,
+      "address": "수원시 팔당구",
+      "id": 2
+    },
+    {
+      "name": "최문석",
+      "clinetNumber": 2,
+      "address": "수원시 팔당구",
+      "id": 3
+    },
+    {
+      "name": "최문석",
+      "clinetNumber": 2,
+      "address": "수원시 팔당구",
+      "id": 4
+    }
+  ]
+}
