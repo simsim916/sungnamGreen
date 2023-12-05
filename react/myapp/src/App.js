@@ -1,13 +1,11 @@
-import Hello from './Hello';
+import CounterContainer from './containers/CounterContainer';
 
 function App() {
-  return (
-    <>
-      <Hello color="blue" students="학생여러분!!" />
-      <Hello students="선생님!!" />
-      <Hello />
-    </>
-  );
+   return (
+      <div>
+         <CounterContainer />
+      </div>
+   );
 }
 
 export default App;

@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+* {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+form label,
+.regidentUser textarea,
+.delSerialNum input {
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 
+   인라인 스타일 지정시에는 textarea 속성을 이용하지만,
+   외부 스타일 적용시에는 width, height 속성으로 지정.
+*/
+.content textarea {
+  width: 500px;
+  height: 300px;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.listTable {
+  margin-bottom: 20px;
+}
+
+.listTable li {
+  border-bottom: 1px solid;
+  padding: 10px;
+
+  display: flex;
+}
+
+.listTable li div {
+  width: 100%;
+}
+
+/* 
+  listTable 의 div 태그 안에 링크를 걸기 위해 Link 태그를
+  지정한바, 선택자에서는 Link 태그를 직접 인지하지 못함.
+  브라우저 렌더링 과정에서 Link 태그를 a 태그로 변환하여
+  렌더링하므로 아래와 같이 a 태그로 선택자 지정.
+*/
+.listTable li a {
+  background-color: #c0c0c055;
+}
+
+.delSerialNum {
+  margin-top: 20px;
 }
